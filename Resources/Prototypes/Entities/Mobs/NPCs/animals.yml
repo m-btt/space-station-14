@@ -844,25 +844,26 @@
 - type: entity
   name: cow
   parent: SimpleMobBase
-  id: MobCow
+  id: MobCowF
   description: Moo.
   components:
   - type: Sprite
     drawdepth: Mobs
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: cow
+      state: holstein-f
       sprite: Mobs/Animals/cow.rsi
   - type: Tag
     tags:
     - DoorBumpOpener
-    - Cow
+    - CowF
   - type: Reproductive
     partnerWhitelist:
       tags:
-      - Cow
+      - CowM
+      - CowF
     offspring:
-    - id: MobCow
+    - id: MobCowF
   - type: ReproductivePartner
   - type: Physics
   - type: Fixtures
@@ -879,11 +880,11 @@
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: cow
+        Base: holstein-f
       Critical:
-        Base: dead
+        Base: holstein-f-dead
       Dead:
-        Base: dead
+        Base: holstein-f-dead
   - type: SolutionContainerManager
     solutions:
       udder:
@@ -925,6 +926,73 @@
     guides:
     - Chef
     - FoodRecipes
+
+- type: entity
+  parent: MobCowF
+  id: MobCowFAngus
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: angus-f
+      sprite: Mobs/Animals/cow.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: angus-f
+      Critical:
+        Base: angus-f-dead
+      Dead:
+        Base: angus-f-dead
+  - type: SolutionContainerManager
+    solutions:
+      udder:
+        maxVol: 225
+        reagents:
+        - ReagentId: Milk
+          Quantity: 20
+  - type: Udder
+    reagentId: Milk
+    quantityPerUpdate: 15
+    growthDelay: 30
+  - type: Butcherable
+    spawned:
+      id: FoodMeat
+      amount: 7
+
+- type: entity
+  parent: MobCowF
+  id: MobCowFWagyu
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: wagyu-f
+      sprite: Mobs/Animals/cow.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: wagyu-f
+      Critical:
+        Base: wagyu-f-dead
+      Dead:
+        Base: wagyu-f-dead
+  - type: SolutionContainerManager
+    solutions:
+      udder:
+        maxVol: 200
+        reagents:
+        - ReagentId: Milk
+          Quantity: 20
+  - type: Udder
+    reagentId: Milk
+    quantityPerUpdate: 15
+    growthDelay: 30
+  - type: Butcherable
+    spawned:
+      id: FoodMeat
+      amount: 8
+
 
 - type: entity
   name: crab

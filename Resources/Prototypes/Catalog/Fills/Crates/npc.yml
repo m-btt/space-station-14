@@ -109,7 +109,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: MobCow
+      - id: MobCowF
 
 - type: entity
   id: CrateNPCGoat

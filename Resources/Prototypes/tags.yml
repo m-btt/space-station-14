@@ -372,6 +372,12 @@
   id: Cow
 
 - type: Tag
+  id: CowF
+
+- type: Tag
+  id: CowM
+
+- type: Tag
   id: Crab
 
 - type: Tag

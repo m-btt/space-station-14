@@ -24,7 +24,7 @@
 
 - type: biomeMarkerLayer
   id: Cows
-  prototype: MobCow
+  prototype: MobCowF
   minGroupSize: 1
   maxGroupSize: 2
 

@@ -82,7 +82,7 @@
   id: LivestockCow
   icon:
     sprite: Mobs/Animals/cow.rsi
-    state: cow
+    state: holstein-f
   product: CrateNPCCow
   cost: 3200
   category: cargoproduct-category-name-livestock
