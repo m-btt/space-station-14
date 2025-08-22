@@ -109,11 +109,13 @@
   - type: Sprite
     layers:
     - state: green
-    - state: cow
+    - state: holstein-f
       sprite: Mobs/Animals/cow.rsi
   - type: ConditionalSpawner
     prototypes:
-    - MobCow
+    - MobCowF
+    - MobCowFAngus
+    - MobCowFWagyu
 
 - type: entity
   parent: MarkerBase
